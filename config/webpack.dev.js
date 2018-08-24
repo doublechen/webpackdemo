@@ -79,10 +79,10 @@ module.exports = {
            
         }),
         new extractTextPlugin("css/index.css"), //这里的/css/index.css 是分离后的路径
-        // new PurifyCSSPlugin({ 
-        //     //这里配置了一个paths，主要是需找html模板，purifycss根据这个配置会遍历你的文件，查找哪些css被使用了。
-        //     paths: glob.sync(path.join(__dirname, 'src/*.html')),
-        // })
+        new PurifyCSSPlugin({
+            //这里配置了一个paths，主要是需找html模板，purifycss根据这个配置会遍历你的文件，查找哪些css被使用了。
+            paths: glob.sync(path.join(__dirname, '../src/*.html')),
+        })
     ],
 
     devServer:{
